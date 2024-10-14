@@ -5,11 +5,15 @@ import sys
 sys.path.insert(1, '../myy505Utils')
 
 from myy505TesterLib import *
+dataSegment = re.compile(r"\.data")
+textSegment = re.compile(r"\.text")
+labelDeclPattern = re.compile(r"(\w+):")
+endRegion = re.compile(r"(\.text)|(\.align)|(\.globl)|(\w:)")
 
 ################################################################
 # CHANGE THIS TO YOUR MATRIC NUMBER
 ################################################################
-matricNumber = 0
+matricNumber = 5062
 
 # Modifications/additions to the data labels of the program
 newLabels = {
